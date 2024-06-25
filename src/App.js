@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
+  const operators = ["÷", "x", "-", "+"];
+  const handleClick = () => {};
+  const handleResult =()=>{}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3 className="display"></h3>
+      <span className="expression"></span>
+      <section className="panel">
+        {/* numbers */}
+        <section className="numbers">
+          {numbers.map((number) => (
+            <button key={number} onClick={() => handleClick(number)}>
+              {number}
+            </button>
+          ))}
+        </section>
+        {/* operators */}
+        <section className="operators">
+          {operators.map((op, index) => (
+            <button key={index} onClick={() => handleClick(op)}>
+              {op}
+            </button>
+          ))}
+          <button onClick={() => handleResult()}>=</button>
+        </section>
+      </section>
     </div>
   );
 }
