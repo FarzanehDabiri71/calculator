@@ -27,7 +27,7 @@
 
 .numbers {
   display: flex;
-  width: 90px;
+  width: 180px;
   flex-wrap: wrap;
   flex-flow: wrap;
   justify-items: stretch;
@@ -51,6 +51,6 @@
 
 button {
   font-size: 1rem;
-  width: 30px;
+  width: 60px;
   border: 1px solid #d6d6d6;
 }
