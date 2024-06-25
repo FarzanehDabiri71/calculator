@@ -34,7 +34,7 @@
 }
 
 .numbers button:last-child {
-  width: 100%;
+  width: calc(100% - 33.33%);
 }
 
 .operators {
