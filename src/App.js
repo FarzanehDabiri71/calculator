@@ -11,11 +11,13 @@ function App() {
   };
   const handleResult = () => {
     const result = expression
-      .join("")
-      .split(/(\D)/g)
-      .map((value) => (value.match(/\d/g) ? parseInt(value, 0) : value))
+      .join("") // Joining 'expression' into a single string
+      .split(/(\D)/g) // Splitting by non-digit characters (operators)
+      .map((value) => (value.match(/\d/g) ? parseInt(value, 0) : value)) // Mapping to convert digits back to numbers
       .reduce((acc, value, index, array) => {
-        switch (value) {
+        switch (
+          value // Reducing the array based on operators
+        ) {
           case "+":
             return (acc = acc + array[index + 1]);
           case "-":
@@ -29,12 +31,13 @@ function App() {
         }
       });
     setDisplay(result);
-    setExpression("");
+    setExpression(""); // Resetting 'expression'
   };
-  const handleClear =()=>{
-    setDisplay("")
-    setExpression([])
-  }
+  const handleClear = () => {
+    // Event handler to clear 'display' and 'expression'
+    setDisplay("");
+    setExpression([]);
+  };
   return (
     <div className="App">
       <h3 className="display">{display}</h3>
